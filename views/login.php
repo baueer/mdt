@@ -30,5 +30,6 @@
   <p style="font-size: 20px" class="cw">MOBILE DATA TERMINAL v0.0.1 ALPHA</p>
 
   <script src="./js/scripts.js"></script>
+  <?php session_start(); if($_SESSION['REDIR']==true) echo '<script>openErrorTab();</script>' ?>
 </body>
 </html>

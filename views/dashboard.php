@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!$_SESSION['username']) {
+    header('location: http://localhost/mobile-data-terminal/login');
+  }
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,6 +25,8 @@
 
   Welcome <?php echo $_POST['user']; ?><br>
   Your pass is <?php echo $_POST['pass']; ?><br> -->
+
+  <p><a href="./includes/logout.php">LOGOUT</a></p>
 
   <p style="font-size: 20px" class="cw">MOBILE DATA TERMINAL v0.0.1 ALPHA</p>
 

@@ -1,0 +1,20 @@
+@media only screen and (max-width: 1366px) and (min-width: 1360px) {
+
+
+.cw {
+    margin-top: 630px;
+}
+.error-box {
+    margin: 200px 392px;
+}
+
+/*    LOGIN SECTION   */
+#login-container {
+    margin: 140px 570px;
+}
+#login-logo {
+    margin: 18px 280px;
+}
+
+
+}
