@@ -2,8 +2,8 @@
 
 session_start();
 
-$admUser = 'theoneuer';
-$admPass = '1234';
+$admUser = '#';
+$admPass = '#';
 
 $loggedUser = $_POST['user'];
 
