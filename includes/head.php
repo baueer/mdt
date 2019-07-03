@@ -3,9 +3,12 @@
 <meta name="description" content="LV Police Department Mobile Data Terminal">
 <meta name="author" content="LV Police Department">
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link rel="stylesheet" href="./css/main.css">
-<link rel="stylesheet" href="./css/responsive1366px.css">
+<script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous">
+</script>
 
 <?php
     switch($_SERVER['REQUEST_URI']) {

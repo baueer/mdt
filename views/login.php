@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,15 +22,13 @@
     </div>
   </div>
 
-  <div class="error-box" id="error-box">
-    <p id="error-title">ERROR:</p>
-    <p id="error-text">INVALID USER OR PASSWORD</p>
-    <button onClick="closeErrorTab();"><span>OK</span></button>
-  </div>
+  <?php include ('../includes/error.php');?>
 
   <p style="font-size: 20px" class="cw">MOBILE DATA TERMINAL v0.0.1 ALPHA</p>
 
   <script src="./js/scripts.js"></script>
-  <?php session_start(); if($_SESSION['REDIR']==true) echo '<script>openErrorTab();</script>' ?>
+  <?php if($_SESSION['error'] === 1) echo '<script>var err = "INVALID USER OR PASSWORD"; openErrorTab(err);</script>';
+        elseif($_SESSION['dashAuth'] === 0) echo '<script>var err = "YOU ARE NOT LOGGED IN"; openErrorTab(err);</script>';
+  ?>
 </body>
 </html>

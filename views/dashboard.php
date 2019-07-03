@@ -1,6 +1,10 @@
 <?php
   session_start();
+  $_SESSION['dashAuth'] = 1;
+  $_SESSION['error'] = 0;
+
   if(!$_SESSION['username']) {
+    $_SESSION['dashAuth'] = 0;
     header('location: http://localhost/mobile-data-terminal/login');
   }
 ?>
@@ -13,22 +17,20 @@
 
 <body>
 
-  <!-- <?php 
-  //   $username = $_POST['user'];
-  //   $password = $_POST['pass'];
+  <?php include ('../includes/headerDash.php'); ?>
+  <?php include ('../includes/buttonsDash.php'); ?>
 
-  //   if($username != 'theoneuer' || $password != '123456') { 
-  //     header('Location: http://localhost/mobile-data-terminal/login');
-  //     die();
-  //   }
-  // ?>
+  <?php include ('../includes/dashboard/createCall.php'); ?>
+  <?php include ('../includes/dashboard/activeCall.php'); ?>
+  <?php include ('../includes/dashboard/writeReport.php') ?>
 
-  Welcome <?php echo $_POST['user']; ?><br>
-  Your pass is <?php echo $_POST['pass']; ?><br> -->
+  <?php 
+    if($_SESSION['activeCall'] > 0) echo "<script> document.getElementById('create-call-container').style.display = 'none'; document.getElementById('active-call-container').style.display = 'block';</script>";
+  ?>
 
-  <p><a href="./includes/logout.php">LOGOUT</a></p>
-
-  <p style="font-size: 20px" class="cw">MOBILE DATA TERMINAL v0.0.1 ALPHA</p>
+  <?php include ('../includes/error.php');?>
+  <?php include ('../includes/footerDash.php'); ?>
+  <script src="./js/scripts.js"></script>
 
 </body>
 </html>
